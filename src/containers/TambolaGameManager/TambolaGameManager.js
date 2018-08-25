@@ -47,7 +47,7 @@ class TambolaGameManager extends Component {
     };
 
     componentWillMount() {
-        console.log('componentWillMount');
+        // console.log('componentWillMount');
         this.setDefaultGameNumbers();
     }
 
@@ -89,7 +89,7 @@ class TambolaGameManager extends Component {
     };
 
     beginGameHandler = () => {
-        console.log('Game Started');
+        // console.log('Game Started');
         this.beginGameTimerHandler();
     };
 
