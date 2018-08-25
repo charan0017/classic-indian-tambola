@@ -9,26 +9,26 @@ const MAX_NUMBERS = 90;
 const GAME_INTERVAL = 5000;
 
 class TambolaGameManager extends Component {
-    state = {
-        gameStarted: false,
-        gamePaused: false,
-        gameEnded: false,
-        gameTimer: null,
-        currentNumber: null,
-        gameHistory: [],
-        coinPublishing: false,
-        numbers: {},
-    }
-
-    getMaxNumbers = () => {
-        return this.props.maxNumbers && typeof this.props.maxNumbers === 'number'
-            ? this.props.maxNumbers
-            : MAX_NUMBERS;
+    constructor(props) {
+        super(props);
+        this.state = {
+            gameStarted: false,
+            gamePaused: false,
+            gameEnded: false,
+            gameTimer: null,
+            currentNumber: null,
+            gameHistory: [],
+            coinPublishing: false,
+            numbers: {},
+            maxNumbers: props.maxNumbers && typeof props.maxNumbers === 'number'
+                ? props.maxNumbers
+                : MAX_NUMBERS
+        };
     }
 
     setDefaultGameNumbers = () => {
         const numbers = {};
-        for (let currentNumber = 1; currentNumber <= this.getMaxNumbers(); currentNumber += 1) {
+        for (let currentNumber = 1; currentNumber <= this.state.maxNumbers; currentNumber += 1) {
             numbers[currentNumber] = ({
                 value: currentNumber,
                 active: false,
@@ -44,7 +44,7 @@ class TambolaGameManager extends Component {
             coinPublishing: false,
             numbers,
         });
-    }
+    };
 
     componentWillMount() {
         console.log('componentWillMount');
@@ -59,7 +59,7 @@ class TambolaGameManager extends Component {
             return inActiveNumbers[Math.floor(Math.random() * inActiveNumbers.length)];
         }
         return null;
-    }
+    };
 
     updateInActiveNumber = (inActiveNumber) => {
         const numbers = { ...this.state.numbers };
@@ -72,13 +72,13 @@ class TambolaGameManager extends Component {
         setTimeout(() => {
             this.setState({ coinPublishing: false });
         }, 30 * Math.floor(GAME_INTERVAL / 100));
-    }
+    };
 
     checkGameEnded = () => {
         if (!this.getRandomInActiveNumber()) {
             this.endGameHandler();
         }
-    }
+    };
 
     chooseRandomNumber = () => {
         const randomNumber = this.getRandomInActiveNumber();
@@ -86,43 +86,43 @@ class TambolaGameManager extends Component {
             this.updateInActiveNumber(randomNumber);
         }
         this.checkGameEnded();
-    }
+    };
 
     beginGameHandler = () => {
         console.log('Game Started');
         this.beginGameTimerHandler();
-    }
+    };
 
     pauseGameHandler = () => {
         // console.log('Game Paused');
         this.endGameTimerHandler(true);
-    }
+    };
 
     resumeGameHandler = () => {
         // console.log('Game Resumed');
         this.beginGameTimerHandler();
-    }
+    };
 
     endGameHandler = () => {
-        console.log('Game Ended');
+        // console.log('Game Ended');
         this.endGameTimerHandler(false, true);
-    }
+    };
 
     resetGameHandler = () => {
         this.endGameHandler();
         this.setDefaultGameNumbers();
-    }
+    };
 
     beginGameTimerHandler = () => {
         const gameTimer = setInterval(() => this.chooseRandomNumber(), GAME_INTERVAL);
         this.setState({ gameStarted: true, gamePaused: false, gameTimer });
         this.updateInActiveNumber(this.getRandomInActiveNumber());
-    }
+    };
 
     endGameTimerHandler = (gamePaused = false, gameEnded = false) => {
         clearInterval(this.state.gameTimer);
         this.setState({ gamePaused, gameEnded, gameTimer: null });
-    }
+    };
 
     getGamePositonButton = () => {
         let button = (
@@ -150,7 +150,7 @@ class TambolaGameManager extends Component {
             );
         }
         return button;
-    }
+    };
 
     getGameControls = () => {
         return (
@@ -162,9 +162,9 @@ class TambolaGameManager extends Component {
                     btnType={'Danger'} >RESET</Button>
             </div>
         );
-    }
+    };
 
-    getCoinPubisher = () => {
+    getCoinPublisher = () => {
         return (
             this.state.coinPublishing
                 ? <div className={classes.CoinPublisher}>
@@ -172,7 +172,7 @@ class TambolaGameManager extends Component {
                   </div>
                 : null
         );
-    }
+    };
 
     render() {
         // console.log('rendering');
@@ -182,7 +182,7 @@ class TambolaGameManager extends Component {
                     margin: '5px',
                     padding: '0px',
                 }}>Classic Indian Tambola</h2>
-                {this.getCoinPubisher()}
+                {this.getCoinPublisher()}
                 {this.getGameControls()}
                 <TambolaBoard numbers={this.state.numbers} />
                 <h5 style={{

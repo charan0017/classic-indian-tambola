@@ -21,6 +21,6 @@ const coinPublisher = (props) => {
             {props.children}
         </div>
     );
-}
+};
 
 export default coinPublisher;
