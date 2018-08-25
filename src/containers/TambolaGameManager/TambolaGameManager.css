@@ -8,6 +8,11 @@
     font-family: inherit;
 }
 
+.Header {
+    margin: 5px;
+    padding: 0px;
+}
+
 .GameControls {
     display: flex;
     flex-direction: row;
@@ -20,6 +25,16 @@
     top: 200px;
     left: 55px;
     font-family: inherit;
+}
+
+.Footer {
+    margin: 10px;
+    color: darkslategray;
+}
+
+.Footer a {
+    text-decoration: none;
+    color: navy;
 }
 
 @media (min-width: 500px) {

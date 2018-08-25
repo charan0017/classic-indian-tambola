@@ -124,7 +124,7 @@ class TambolaGameManager extends Component {
         this.setState({ gamePaused, gameEnded, gameTimer: null });
     };
 
-    getGamePositonButton = () => {
+    getGamePositionButton = () => {
         let button = (
             <Button
                 clicked={this.beginGameHandler}
@@ -155,7 +155,7 @@ class TambolaGameManager extends Component {
     getGameControls = () => {
         return (
             <div className={classes.GameControls}>
-                {this.getGamePositonButton()}
+                {this.getGamePositionButton()}
                 <Button
                     disabled={!this.state.gameStarted}
                     clicked={this.resetGameHandler}
@@ -178,17 +178,15 @@ class TambolaGameManager extends Component {
         // console.log('rendering');
         return (
             <div className={classes.TambolaGameManager}>
-                <h2 style={{
-                    margin: '5px',
-                    padding: '0px',
-                }}>Classic Indian Tambola</h2>
+                <h2 className={classes.Header}>
+                    Classic Indian Tambola
+                </h2>
                 {this.getCoinPublisher()}
                 {this.getGameControls()}
                 <TambolaBoard numbers={this.state.numbers} />
-                <h5 style={{
-                    margin: '10px',
-                    color: 'darkslategrey'
-                }}>Note: we are sorry, but tickets must be self bought or google.</h5>
+                <h5 className={classes.Footer}>
+                    Note: we are sorry, but tickets must be self bought or <a target={"_blank"} href={"https://www.google.co.in/search?q=housie+ticket+generator+online"}>google.</a>
+                </h5>
             </div>
         );
     }
