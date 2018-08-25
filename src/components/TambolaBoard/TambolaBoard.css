@@ -1,0 +1,19 @@
+.TambolaBoard {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-items: center;
+}
+
+@media (min-width: 500px) {
+    .TambolaBoard {
+        grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    }
+}
+
+@media (min-width: 900px) {
+    .TambolaBoard {
+        grid-template-columns: 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67% 6.67%;
+    }
+}

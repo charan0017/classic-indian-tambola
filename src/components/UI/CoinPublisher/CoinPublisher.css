@@ -1,0 +1,50 @@
+.CoinPublisher {
+    animation: FadeAnimation 1.5s ease-in .2s forwards;
+    box-sizing: border-box;
+    border: 2px solid salmon;
+    background-color: salmon;
+    color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    font-weight: bold;
+    z-index: 100;
+    width: 80%;
+    height: 45%;
+    font-size: 170px;
+    box-shadow: -25px 20px rgb(156, 85, 78);
+    text-shadow: -4px 3px rgb(56, 56, 56);
+    cursor: cell;
+}
+
+@keyframes FadeAnimation {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+}
+
+@media (min-width: 500px) {
+    .CoinPublisher {
+        width: 55%;
+        height: 60%;
+        font-size: 250px;
+        box-shadow: -25px 20px rgb(156, 85, 78);
+    }
+}
+
+@media (min-width: 800px) {
+    .CoinPublisher {
+        width: 40%;
+        height: 80%;
+        font-size: 350px;
+        box-shadow: -35px 30px rgb(156, 85, 78);
+    }
+}

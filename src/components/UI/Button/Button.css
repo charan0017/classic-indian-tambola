@@ -1,0 +1,35 @@
+.Button {
+    background-color: burlywood;
+    box-shadow: -3px 2px gray;
+    border: 2px solid gray;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 5;
+    width: 150px;
+}
+
+.Button:disabled {
+    color: darkgrey;
+    cursor: not-allowed;
+}
+
+.Success {
+    color: rgb(58, 128, 52);
+}
+
+.Danger {
+    color: rgb(252, 48, 48);
+}
+
+@media (min-width: 500px) {
+    .Button {
+        width: 200px;
+    }
+}

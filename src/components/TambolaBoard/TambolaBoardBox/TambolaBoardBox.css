@@ -1,0 +1,23 @@
+.TambolaBoardBox {
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: lightyellow;
+    font-weight: bold;
+    font-size: 28px;
+    cursor: cell;
+    color: rgb(131, 128, 128);
+}
+
+@media (min-width: 500px) {
+    .TambolaBoardBox {
+        border: 2px solid black;
+        width: 100%;
+        height: 90px;
+        font-size: 32px;
+    }
+}
