@@ -90,6 +90,7 @@ class TambolaGameManager extends Component {
 
     beginGameHandler = () => {
         // console.log('Game Started');
+        this.updateInActiveNumber(this.getRandomInActiveNumber());
         this.beginGameTimerHandler();
     };
 
@@ -100,7 +101,7 @@ class TambolaGameManager extends Component {
 
     resumeGameHandler = () => {
         // console.log('Game Resumed');
-        this.beginGameTimerHandler();
+        this.beginGameHandler();
     };
 
     endGameHandler = () => {
@@ -116,7 +117,6 @@ class TambolaGameManager extends Component {
     beginGameTimerHandler = () => {
         const gameTimer = setInterval(() => this.chooseRandomNumber(), GAME_INTERVAL);
         this.setState({ gameStarted: true, gamePaused: false, gameTimer });
-        this.updateInActiveNumber(this.getRandomInActiveNumber());
     };
 
     endGameTimerHandler = (gamePaused = false, gameEnded = false) => {
