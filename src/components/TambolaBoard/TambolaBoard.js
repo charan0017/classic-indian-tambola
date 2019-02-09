@@ -1,12 +1,12 @@
 import React from 'react';
 
-import classes from './TambolaBoard.css';
+import './TambolaBoard.css';
 import TambolaBoardBox from './TambolaBoardBox/TambolaBoardBox';
 
 const tambolaBoard = (props) => (
-    <div className={classes.TambolaBoard}>
+    <div className='TambolaBoard'>
         {props.numbers
-            ? Object.keys(props.numbers).map(key => 
+            ? Object.keys(props.numbers).map(key =>
                 <TambolaBoardBox
                     key={key}
                     value={props.numbers[key].value}

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import classes from './TambolaBoardBox.css';
+import './TambolaBoardBox.css';
 import TambolaBoardCoin from '../TambolaBoardCoin/TambolaBoardCoin';
 
 const tambolaBoardBox = (props) => (
-    <div className={classes.TambolaBoardBox}>
+    <div className='TambolaBoardBox'>
         {props.active
             ? <TambolaBoardCoin coinType={props.coinType}>{props.value}</TambolaBoardCoin>
             : <p>{props.value}</p>}

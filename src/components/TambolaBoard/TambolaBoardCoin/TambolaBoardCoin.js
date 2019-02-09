@@ -1,10 +1,10 @@
 import React from 'react';
 
-import classes from './TambolaBoardCoin.css';
+import './TambolaBoardCoin.css';
 
 const tambolaBoardCoin = (props) => (
     <div
-        className={[classes.TambolaBoardCoin, classes[props.coinType]].join(' ')}>
+        className={['TambolaBoardCoin', props.coinType].join(' ')}>
     {props.children}</div>
 );
 

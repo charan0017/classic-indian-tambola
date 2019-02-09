@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import classes from './TambolaGameManager.css';
+import './TambolaGameManager.css';
 import TambolaBoard from '../../components/TambolaBoard/TambolaBoard';
 import Button from '../../components/UI/Button/Button';
 import CoinPublisher from '../../components/UI/CoinPublisher/CoinPublisher';
@@ -154,7 +154,7 @@ class TambolaGameManager extends Component {
 
     getGameControls = () => {
         return (
-            <div className={classes.GameControls}>
+            <div className='GameControls'>
                 {this.getGamePositionButton()}
                 <Button
                     disabled={!this.state.gameStarted}
@@ -167,7 +167,7 @@ class TambolaGameManager extends Component {
     getCoinPublisher = () => {
         return (
             this.state.coinPublishing
-                ? <div className={classes.CoinPublisher}>
+                ? <div className='CoinPublisher'>
                     <CoinPublisher>{this.state.currentNumber}</CoinPublisher>
                   </div>
                 : null
@@ -177,14 +177,14 @@ class TambolaGameManager extends Component {
     render() {
         // console.log('rendering');
         return (
-            <div className={classes.TambolaGameManager}>
-                <h2 className={classes.Header}>
+            <div className='TambolaGameManager'>
+                <h2 className='Header'>
                     Classic Indian Tambola
                 </h2>
                 {this.getCoinPublisher()}
                 {this.getGameControls()}
                 <TambolaBoard numbers={this.state.numbers} />
-                <h5 className={classes.Footer}>
+                <h5 className='Footer'>
                     Note: we are sorry, but tickets must be self bought or <a target={"_blank"} href={"https://www.google.co.in/search?q=housie+ticket+generator+online"}>google.</a>
                 </h5>
             </div>
