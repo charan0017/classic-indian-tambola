@@ -64,8 +64,7 @@ class TambolaGameManager extends Component {
         const startTime = TIMES[currentNumber];
         const endTime = (TIMES[currentNumber + 1] - 0.3).toFixed(2);
         const numbersAudioTimeRangeUrl = `${numbersAudioUrl}#t=${startTime},${endTime}`;
-        const currentNumberAudio = new Audio(numbersAudioTimeRangeUrl);
-        await currentNumberAudio.play();
+        await new Audio(numbersAudioTimeRangeUrl).play();
         this.setState({
             numbers,
             currentNumber,
@@ -73,7 +72,6 @@ class TambolaGameManager extends Component {
             coinPublishing: true
         });
         setTimeout(() => {
-            currentNumberAudio.pause();
             this.setState({ coinPublishing: false });
         }, 30 * Math.floor(GAME_INTERVAL / 100));
     };
@@ -93,23 +91,19 @@ class TambolaGameManager extends Component {
     };
 
     beginGameHandler = async () => {
-        // console.log('Game Started');
         await this.updateInActiveNumber(this.getRandomInActiveNumber());
         this.beginGameTimerHandler();
     };
 
     pauseGameHandler = () => {
-        // console.log('Game Paused');
         this.endGameTimerHandler(true);
     };
 
     resumeGameHandler = async () => {
-        // console.log('Game Resumed');
         await this.beginGameHandler();
     };
 
     endGameHandler = () => {
-        // console.log('Game Ended');
         this.endGameTimerHandler(false, true);
     };
 
@@ -179,7 +173,6 @@ class TambolaGameManager extends Component {
     };
 
     render() {
-        // console.log('rendering');
         return (
             <div className='TambolaGameManager'>
                 <h2 className='Header'>
