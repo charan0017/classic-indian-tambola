@@ -6,6 +6,9 @@
     Classic Indian Tambola game based on React
 </p>
 
+## Try It
+[https://classic-indian-tambola.herokuapp.com](https://https://classic-indian-tambola.herokuapp.com/)
+
 ## Available Scripts
 
 In the project directory, you can run:
