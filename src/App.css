@@ -1,4 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
-  font-family: inherit;
+  font-family: 'Libre Baskerville', sans-serif;
 }

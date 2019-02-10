@@ -9,8 +9,8 @@
 }
 
 .Header {
-    margin: 5px;
-    padding: 0px;
+    margin: 5px 5px 0;
+    padding: 0;
 }
 
 .GameControls {
@@ -28,7 +28,7 @@
 }
 
 .Footer {
-    margin: 10px;
+    margin: 4px;
     color: darkslategray;
 }
 
