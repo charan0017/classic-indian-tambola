@@ -7,7 +7,7 @@
 </p>
 
 ## Try It
-[classic-indian-tambola.herokuapp.com](https://classic-indian-tambola.herokuapp.com/)
+[charan0017.github.io/classic-indian-tambola](https://charan0017.github.io/classic-indian-tambola/)
 
 ## Available Scripts
 
